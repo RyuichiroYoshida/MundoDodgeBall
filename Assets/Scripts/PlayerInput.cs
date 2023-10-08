@@ -3,24 +3,23 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private bool _attackInput = false;
-    [SerializeField] private bool _buttonPushQ = false;
+    [SerializeField] private InputAction _action;
 
-    public bool AttackInput => _attackInput;
-    public bool ButtonPushQ => _buttonPushQ;
-    private void Start()
+    private void OnEnable()
     {
-        
+        _action?.Enable();
     }
+
+    private void OnDisable()
+    {
+        _action?.Disable();
+    }
+    
     private void Update()
     {
-        var current = Keyboard.current;
-        if (current == null)
+        if (_action == null)
             return;
-        var qKey = current.qKey;
-        if (qKey.wasPressedThisFrame)
-            _attackInput = true;
-        if (qKey.wasReleasedThisFrame)
-            _attackInput = false;
+        var value = _action.ReadValue<float>();
+        print($"Actionの入力値 {value}");
     }
 }

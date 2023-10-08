@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 215416506}
   - component: {fileID: 215416505}
   - component: {fileID: 215416504}
+  - component: {fileID: 215416508}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -230,6 +231,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &215416508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215416503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c4f7cbe389d39428ce4a645f3e0bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 802b90d7-0029-41f3-b7a8-cab743672d0d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 6ac762e0-9f65-4ccf-81fb-f5f30751d0e0
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1 &649583129
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649583129}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.1694975, y: 0.82318985, z: -0.43873712, w: -0.3180233}
+  m_LocalRotation: {x: -0.16949749, y: 0.8231899, z: -0.43873715, w: -0.31802323}
   m_LocalPosition: {x: 5.64, y: 9.34, z: 6.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -588,7 +618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.1694975, y: 0.82318985, z: -0.43873712, w: -0.3180233}
+  m_LocalRotation: {x: -0.16949749, y: 0.8231899, z: -0.43873715, w: -0.31802323}
   m_LocalPosition: {x: 5.64, y: 9.34, z: 6.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
