@@ -15,9 +15,7 @@ public class PlayerMove : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _playerInput = new Playerinput();
-        _playerInput.Player.Move.started += OnMove;
         _playerInput.Player.Move.performed += OnMove;
-        _playerInput.Player.Jump.started += OnJump;
         _playerInput.Player.Jump.performed += OnJump;
         _playerInput.Enable();
     }
