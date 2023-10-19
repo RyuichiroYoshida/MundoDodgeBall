@@ -1187,10 +1187,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1673023511}
-    - target: {fileID: 2511537341816574556, guid: cb744735c2f5d454fae972d7450a510e, type: 3}
-      propertyPath: m_VersionIndex
-      value: 2935
-      objectReference: {fileID: 0}
     - target: {fileID: 2543003379618022351, guid: cb744735c2f5d454fae972d7450a510e, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1199,10 +1195,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1251451907}
-    - target: {fileID: 5332440550593444467, guid: cb744735c2f5d454fae972d7450a510e, type: 3}
-      propertyPath: m_VersionIndex
-      value: 5046
-      objectReference: {fileID: 0}
     - target: {fileID: 5956716403355940147, guid: cb744735c2f5d454fae972d7450a510e, type: 3}
       propertyPath: m_Name
       value: Prism
