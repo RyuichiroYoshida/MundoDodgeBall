@@ -20,6 +20,6 @@ public class PlayerAttack : MonoBehaviour
 
     void OnAttack(InputAction.CallbackContext context)
     {
-        Instantiate(_weaponPrefab, Vector3.forward, Quaternion.identity);
+        Instantiate(_weaponPrefab, Vector3.forward, Quaternion.Euler(0, 180, 0));
     }
 }
