@@ -1,6 +1,5 @@
 using UnityEngine;
 using DG.Tweening;
-using Vector3 = UnityEngine.Vector3;
 
 public class WeaponController : MonoBehaviour
 {
@@ -22,6 +21,8 @@ public class WeaponController : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
-            Destroy(this);
+            Destroy(this.gameObject);
+        if (other.gameObject.CompareTag("Wall"))
+            Destroy(this.gameObject);
     }
 }
