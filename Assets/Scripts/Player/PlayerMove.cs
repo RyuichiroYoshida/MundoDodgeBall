@@ -14,7 +14,9 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        // PlayerInputをインスタンス化
         _playerInput = new Playerinput();
+        // MoveやJumpのメソッドをInputSystemのデリゲートに追加
         _playerInput.Player.Move.performed += OnMove;
         _playerInput.Player.Jump.performed += OnJump;
         _playerInput.Enable();

@@ -8,7 +8,9 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
+        // PlayerInputをインスタンス化
         _playerinput = new Playerinput();
+        // 攻撃メソッドをInputSystemのデリゲートに追加
         _playerinput.Player.Attack.performed += OnAttack;
         _playerinput.Enable();
     }
