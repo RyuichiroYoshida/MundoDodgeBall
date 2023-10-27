@@ -6,6 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 10;
     [SerializeField] private float _jumpForce = 5;
+    [SerializeField] private float _speedLimit = 2;
 
     private Rigidbody _rb;
     private Playerinput _playerInput;
@@ -18,6 +19,7 @@ public class PlayerMove : MonoBehaviour
         _playerInput = new Playerinput();
         // MoveやJumpのメソッドをInputSystemのデリゲートに追加
         _playerInput.Player.Move.performed += OnMove;
+        _playerInput.Player.Move.canceled += OffMove;
         _playerInput.Player.Jump.performed += OnJump;
         _playerInput.Enable();
     }
@@ -29,12 +31,18 @@ public class PlayerMove : MonoBehaviour
     
     private void FixedUpdate()
     {
-        _rb.AddForce(new Vector3(_moveInputValue.x, 0, _moveInputValue.y) * _moveSpeed);
+        if (_rb.velocity.magnitude < _speedLimit)
+            _rb.AddForce(new Vector3(_moveInputValue.x, 0, _moveInputValue.y) * _moveSpeed);
     }
 
     private void OnMove(InputAction.CallbackContext context)
     {
         _moveInputValue = context.ReadValue<Vector2>();
+    }
+
+    private void OffMove(InputAction.CallbackContext context)
+    {
+        _moveInputValue = Vector2.zero;
     }
 
     private void OnJump(InputAction.CallbackContext context)
