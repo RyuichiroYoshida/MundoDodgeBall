@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEditor;
 
-public class FolderCreate : MonoBehaviour
+namespace Yoshida.Plugins
 {
-    [MenuItem("GameObject/FolderCreate", priority = 21)]
-    public static void GameObjectMenuItem()
+    public class FolderCreate : MonoBehaviour
     {
-        print("FolderCreate");
+        [MenuItem("GameObject/FolderCreate", priority = 21)]
+        public static void GameObjectMenuItem()
+        {
+            print("FolderCreate");
+        }
     }
 }
