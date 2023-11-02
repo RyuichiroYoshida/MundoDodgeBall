@@ -35,8 +35,11 @@ namespace Yoshida.Plugins
             // 生成したいフォルダの名前を入れる
             var names = new List<string>
             {
+//                "Animation",
                 "Audios",
-                "Images",
+//                "Images",
+                "Material",
+//                "Mesh",
                 "Prefabs",
                 "Scripts"
             };
