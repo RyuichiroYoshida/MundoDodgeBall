@@ -14,6 +14,12 @@ namespace Yoshida.Plugins
         {
             // 現在右クリックで表示されたGUIなどのインスタンスIDを取得し
             var instanceID = Selection.activeInstanceID;
+            // プロジェクトウィンドウ以外で指定した時
+            if (instanceID == 0)
+            {
+                Debug.LogWarning("フォルダを作成したい場所をプロジェクトウィンドウ上で指定して下さい");
+                return;
+            }
             // そのインスタンスIDのPathを入手する
             var path = AssetDatabase.GetAssetPath(instanceID);
             Debug.Log($"Folder Create : {path}");
