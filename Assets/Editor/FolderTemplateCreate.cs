@@ -1,29 +1,46 @@
 using UnityEngine;
 using UnityEditor;
-using System.IO;
+using System.Collections.Generic;
 
 namespace Yoshida.Plugins
 {
-    public class FolderTemplateCreate : MonoBehaviour
+    public class FolderTemplateCreate
     {
+        /// <summary>
+        /// 右クリックしたフォルダのPathでFolderCreateメソッドを呼ぶ
+        /// </summary>
         [MenuItem("Assets/Create/FolderCreate", priority = 21)]
         public static void GameObjectMenuItem()
         {
-            print("FolderCreate");
-            FolderPath();
+            // 現在右クリックで表示されたGUIなどのインスタンスIDを取得し
+            var instanceID = Selection.activeInstanceID;
+            // そのインスタンスIDのPathを入手する
+            var path = AssetDatabase.GetAssetPath(instanceID);
+            Debug.Log($"Folder Create : {path}");
+            FolderCreate(path);
         }
 
-        static void FolderPath()
+        /// <summary>
+        /// テンプレートに登録したフォルダ名のフォルダを自動生成する
+        /// </summary>
+        /// <param name="path">フォルダを作成する場所</param>
+        private static void FolderCreate(string path)
         {
-            var temp = new string[4]
+            // 生成したいフォルダの名前を入れる
+            var names = new List<string>
             {
-                "Scripts", "Prefabs", "Images", "Audios"
+                "Audios",
+                "Images",
+                "Prefabs",
+                "Scripts"
             };
-            for (var i = 0; i < temp.Length; i++)
+
+            foreach (var name in names)
             {
-                if (!Directory.Exists("Assets/" + temp[i]))
+                // 生成したいフォルダが存在しないとき、フォルダ作成
+                if (!AssetDatabase.IsValidFolder(path + '/' + name))
                 {
-                    Directory.CreateDirectory("Assets/" + temp[i]);
+                    AssetDatabase.CreateFolder(path, name);
                     AssetDatabase.Refresh();
                 }
             }
