@@ -46,12 +46,23 @@ namespace Yoshida.Plugins
 
             foreach (var name in names)
             {
-                // 生成したいフォルダが存在しないとき、フォルダ作成
-                if (!AssetDatabase.IsValidFolder(path + '/' + name))
-                {
-                    AssetDatabase.CreateFolder(path, name);
-                    AssetDatabase.Refresh();
-                }
+                DuplicateCheck(path, name);
+            }
+
+            // AssetStoreTools は生成場所が Asset 直下なので別途生成
+            DuplicateCheck("Asset", "AssetStoreTools");
+        }
+
+        /// <summary>
+        /// フォルダ生成時の重複チェック
+        /// </summary>
+        private static void DuplicateCheck(string path, string name)
+        {
+            // 生成したいフォルダが存在しないとき、フォルダ作成
+            if (!AssetDatabase.IsValidFolder(path + '/' + name))
+            {
+                AssetDatabase.CreateFolder(path, name);
+                AssetDatabase.Refresh();
             }
         }
     }
