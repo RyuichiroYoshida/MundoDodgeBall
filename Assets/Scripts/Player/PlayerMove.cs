@@ -28,7 +28,6 @@ public class PlayerMove : MonoBehaviour
     {
         _playerInput?.Dispose();
     }
-    
     private void FixedUpdate()
     {
         if (_rb.velocity.magnitude < _speedLimit)

@@ -68,17 +68,6 @@ public partial class @Playerinput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""e262555b-f25a-41ad-a5ef-e7b3b27c1a3c"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""2D Vector"",
                     ""id"": ""7afc45f7-a086-44a2-b11d-72a8bd62c714"",
                     ""path"": ""2DVector"",
@@ -135,7 +124,18 @@ public partial class @Playerinput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""51156ac2-bb34-498c-944c-4b5f694ad3f2"",
+                    ""id"": ""b850d184-e4ee-48e8-aa5c-052ef887893d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""129fbe3d-9848-49ae-bc1c-a900c4dde4be"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
