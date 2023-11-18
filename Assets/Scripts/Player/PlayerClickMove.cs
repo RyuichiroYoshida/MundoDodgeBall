@@ -53,8 +53,8 @@ public class PlayerClickMove : MonoBehaviour
                 Debug.DrawRay(ray.origin, ray.direction * _debugRayLength);
             }
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    _marker.SetActive(false);
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        _marker.SetActive(false);
+    }
 }
