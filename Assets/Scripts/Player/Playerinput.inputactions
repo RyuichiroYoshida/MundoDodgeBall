@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ClickMove",
+                    "type": "Button",
+                    "id": "48ae8ef7-ccdf-46e1-9d5a-d3ade435ef1d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -103,46 +112,24 @@
                 {
                     "name": "",
                     "id": "129fbe3d-9848-49ae-bc1c-a900c4dde4be",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Mouse",
-                    "id": "cf3b4305-97dd-4cb2-ab02-7ff466149373",
-                    "path": "OneModifier",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "modifier",
-                    "id": "f294ffef-fb08-4ae0-a7ec-8a568078ec98",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "binding",
-                    "id": "c2a0c59d-88ec-4287-b9e9-81422bd44658",
-                    "path": "<Mouse>/position",
+                    "name": "",
+                    "id": "5a40b496-bf5e-4688-8af3-459b0df8555a",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "ClickMove",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         }

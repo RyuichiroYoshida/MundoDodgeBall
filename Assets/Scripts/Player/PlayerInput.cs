@@ -53,6 +53,15 @@ public partial class @Playerinput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ClickMove"",
+                    ""type"": ""Button"",
+                    ""id"": ""48ae8ef7-ccdf-46e1-9d5a-d3ade435ef1d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -125,46 +134,24 @@ public partial class @Playerinput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""129fbe3d-9848-49ae-bc1c-a900c4dde4be"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Mouse"",
-                    ""id"": ""cf3b4305-97dd-4cb2-ab02-7ff466149373"",
-                    ""path"": ""OneModifier"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""modifier"",
-                    ""id"": ""f294ffef-fb08-4ae0-a7ec-8a568078ec98"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Attack"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""binding"",
-                    ""id"": ""c2a0c59d-88ec-4287-b9e9-81422bd44658"",
-                    ""path"": ""<Mouse>/position"",
+                    ""name"": """",
+                    ""id"": ""5a40b496-bf5e-4688-8af3-459b0df8555a"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""ClickMove"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -176,6 +163,7 @@ public partial class @Playerinput: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+        m_Player_ClickMove = m_Player.FindAction("ClickMove", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -240,6 +228,7 @@ public partial class @Playerinput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Attack;
+    private readonly InputAction m_Player_ClickMove;
     public struct PlayerActions
     {
         private @Playerinput m_Wrapper;
@@ -247,6 +236,7 @@ public partial class @Playerinput: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
+        public InputAction @ClickMove => m_Wrapper.m_Player_ClickMove;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -265,6 +255,9 @@ public partial class @Playerinput: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
+            @ClickMove.started += instance.OnClickMove;
+            @ClickMove.performed += instance.OnClickMove;
+            @ClickMove.canceled += instance.OnClickMove;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -278,6 +271,9 @@ public partial class @Playerinput: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
+            @ClickMove.started -= instance.OnClickMove;
+            @ClickMove.performed -= instance.OnClickMove;
+            @ClickMove.canceled -= instance.OnClickMove;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -300,5 +296,6 @@ public partial class @Playerinput: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnClickMove(InputAction.CallbackContext context);
     }
 }

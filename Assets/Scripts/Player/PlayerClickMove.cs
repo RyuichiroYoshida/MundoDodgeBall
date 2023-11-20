@@ -16,7 +16,7 @@ public class PlayerClickMove : MonoBehaviour
         // PlayerInputをインスタンス化
         _playerinput = new Playerinput();
         // 攻撃メソッドをInputSystemのデリゲートに追加
-        _playerinput.Player.Attack.performed += OnClickMove;
+        _playerinput.Player.ClickMove.performed += OnClickMove;
         _playerinput.Enable();
     }
     private void Start()
@@ -26,6 +26,7 @@ public class PlayerClickMove : MonoBehaviour
     }
     private void OnDestroy()
     {
+        _playerinput.Player.ClickMove.performed -= OnClickMove;
         _playerinput?.Dispose();
     }
 
