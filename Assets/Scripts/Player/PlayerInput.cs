@@ -134,7 +134,7 @@ public partial class @Playerinput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""129fbe3d-9848-49ae-bc1c-a900c4dde4be"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
