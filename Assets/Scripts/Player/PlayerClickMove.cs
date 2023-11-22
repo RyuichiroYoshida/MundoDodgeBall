@@ -28,7 +28,10 @@ public class PlayerClickMove : MonoBehaviour
         _playerinput.Player.ClickMove.performed -= OnClickMove;
         _playerinput?.Dispose();
     }
-
+    private void PlayerLookAt()
+    {
+        this.transform.LookAt(_marker.transform);
+    }
     private void OnClickMove(InputAction.CallbackContext context)
     {
         _marker.SetActive(true);
@@ -46,6 +49,7 @@ public class PlayerClickMove : MonoBehaviour
             {
                 _marker.transform.position = hit.point + _markerOffset;
                 _nav.SetDestination(_marker.transform.position);
+                PlayerLookAt();
             }
         }
         else

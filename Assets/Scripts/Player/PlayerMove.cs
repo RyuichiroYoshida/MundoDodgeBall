@@ -33,17 +33,14 @@ public class PlayerMove : MonoBehaviour
         if (_rb.velocity.magnitude < _speedLimit)
             _rb.AddForce(new Vector3(_moveInputValue.x, 0, _moveInputValue.y) * _moveSpeed);
     }
-
     private void OnMove(InputAction.CallbackContext context)
     {
         _moveInputValue = context.ReadValue<Vector2>();
     }
-
     private void OffMove(InputAction.CallbackContext context)
     {
         _moveInputValue = Vector2.zero;
     }
-
     private void OnJump(InputAction.CallbackContext context)
     {
         _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);

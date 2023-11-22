@@ -13,7 +13,7 @@ public class WeaponController : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _rb.velocity = Vector3.forward * _flyingSpeed;
+        _rb.velocity = transform.forward * _flyingSpeed;
         // X軸方向に無限回転する
         transform.DOLocalRotate(new Vector3(-360, 0, 0), _rotateSpeed, RotateMode.LocalAxisAdd)
             .SetEase(Ease.Linear)
@@ -21,7 +21,10 @@ public class WeaponController : MonoBehaviour
             .SetLink(this.gameObject);
         Destroy(this.gameObject, _lifeTime);
     }
-
+    private void Update()
+    {
+        //_rb.AddForce(transform.forward * _flyingSpeed);
+    }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
