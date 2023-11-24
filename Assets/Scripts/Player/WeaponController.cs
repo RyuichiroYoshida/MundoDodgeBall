@@ -9,7 +9,11 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private float _lifeTime = 5;
     /// <summary>武器の飛翔時の回転速度</summary>
     [SerializeField] private float _rotateSpeed = 0.5f;
+    /// <summary>武器のダメージ</summary>
+    [SerializeField] private int _damage;
     private Rigidbody _rb;
+
+    public int Damage => _damage;
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();

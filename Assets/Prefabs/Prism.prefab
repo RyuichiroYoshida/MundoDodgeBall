@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8713657126136518059}
   m_Layer: 0
   m_Name: Prism
-  m_TagString: Player
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -379,6 +379,7 @@ MonoBehaviour:
   _flyingSpeed: 20
   _lifeTime: 5
   _rotateSpeed: 0.5
+  _damage: 0
 --- !u!1 &6194838908344509339
 GameObject:
   m_ObjectHideFlags: 0
