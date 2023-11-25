@@ -15,15 +15,14 @@ public class PlayerAttack : MonoBehaviour
         _playerinput.Player.Attack.performed += OnAttack;
         _playerinput.Enable();
     }
-
     private void OnDestroy()
     {
         _playerinput?.Dispose();
     }
-
     private void OnAttack(InputAction.CallbackContext context)
     {
-        var pos = this.transform.position;
-        Instantiate(_weaponPrefab, _spawnPos.position, Quaternion.Euler(0, 180, 0));
+        Instantiate(_weaponPrefab);
+        var weaponController = GetComponentInParent<WeaponController>();
+        weaponController.Force = this.transform.forward;
     }
 }
