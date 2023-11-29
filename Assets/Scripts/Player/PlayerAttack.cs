@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
     }
     private void OnAttack(InputAction.CallbackContext context)
     {
-        Instantiate(_weaponPrefab);
+        Instantiate(_weaponPrefab, this.transform);
         var weaponController = GetComponentInParent<WeaponController>();
         weaponController.Force = this.transform.forward;
     }
