@@ -25,6 +25,17 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.dt.app-ui": {
+      "version": "1.0.0-pre.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.androidjni": "1.0.0",
+        "com.unity.modules.uielements": "1.0.0",
+        "com.unity.modules.physics": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.editorcoroutines": {
       "version": "1.0.0",
       "depth": 1,
@@ -85,6 +96,33 @@
       "dependencies": {
         "com.unity.modules.uielements": "1.0.0"
       },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.muse.behavior": {
+      "version": "0.5.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.dt.app-ui": "1.0.0-pre.4",
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.ai": "1.0.0",
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.mono-cecil": {
+      "version": "1.11.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.performance.profile-analyzer": {
@@ -172,6 +210,15 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "jp.hadashikick.vcontainer": {
+      "version": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.8.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.mono-cecil": "1.10.1"
+      },
+      "hash": "7f61287410eaebcba8183357df769594bc4cb857"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
